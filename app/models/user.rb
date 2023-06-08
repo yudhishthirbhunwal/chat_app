@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   # Validations
   validates :username, presence: true, uniqueness: true
+
+  # Associations
+  has_many :room_messages
+  has_many :rooms, through: :room_messages
 end
